@@ -1,0 +1,14 @@
+line-length = 120
+select = [
+    # pycodestyle
+    "E",
+    "W",
+    # pyflakes
+    "F",
+    # isort
+    "I001",
+]
+ignore = ["E902"]
+fixable = ["ALL"]
+target-version = "py311"
+format = "grouped"

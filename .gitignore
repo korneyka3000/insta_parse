@@ -1,0 +1,5 @@
+venv
+chrome-linux64
+.idea
+__pycache__/
+.ruff_cache

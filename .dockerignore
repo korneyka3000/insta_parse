@@ -1,0 +1,8 @@
+*
+!chrome-linux64
+!routers
+!.env
+!dependencies.py
+!main.py
+!requirements.txt
+!chromedriver
