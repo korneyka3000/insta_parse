@@ -5,7 +5,7 @@ from typing import Annotated
 
 from fastapi import APIRouter, Query
 
-from dependencies import SeleniumWorker, get_settings
+from dependencies import SeleniumWorker, UrlsResponse, get_settings
 
 router = APIRouter()
 
@@ -14,8 +14,7 @@ router = APIRouter()
 async def get_photos(
         username: Annotated[str, Query(description='instagram username', max_length=100)],
         max_count: Annotated[int, Query(description='max amount of photo urls to get', ge=1)]
-) -> list[str]:
-
+) -> UrlsResponse:
     loop = asyncio.get_running_loop()
 
     with concurrent.futures.ThreadPoolExecutor() as pool:
@@ -25,4 +24,4 @@ async def get_photos(
                 username, max_count
             ))
 
-    return result
+    return UrlsResponse(urls=result)

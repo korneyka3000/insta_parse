@@ -1,7 +1,7 @@
 import contextlib
 import time
 
-from pydantic import ConfigDict, Field, HttpUrl, constr
+from pydantic import BaseModel, ConfigDict, Field, HttpUrl, constr
 from pydantic_settings import BaseSettings
 from selenium import webdriver
 from selenium.webdriver import Keys
@@ -24,6 +24,10 @@ class Settings(BaseSettings):
 
 def get_settings():
     return Settings(_env_file='.env')
+
+
+class UrlsResponse(BaseModel):
+    urls: list[HttpUrl] = None
 
 
 class SeleniumWorker:
