@@ -11,3 +11,5 @@
 ```bash
    docker compose up 
 ```
+
+- go to http://localhost:8067/docs
