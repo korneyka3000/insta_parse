@@ -46,10 +46,6 @@ class SeleniumWorker:
         self.driver_options.add_argument('--disable-gpu')
         self.driver_options.add_argument("--disable-dev-shm-usage")
         self.driver_options.add_argument('--start-maximized')
-        # self.driver_options.binary_location = '/usr/bin/chromedriver'
-        # print(self.driver_options.binary_location)
-        # service = Service(executable_path='/usr/bin/chromedriver')
-        # self.driver = webdriver.Chrome(options=self.driver_options)
         self.driver = webdriver.Remote(
             "http://chrome:4444/wd/hub",
             options=self.driver_options,

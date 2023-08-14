@@ -22,7 +22,7 @@ services:
       - SE_NODE_MAX_SESSIONS=8
       - SE_NODE_OVERRIDE_MAX_SESSIONS=true
     hostname: chrome
-
+    restart: always
     ports:
       - "4444:4444"
       - "7900:7900"
