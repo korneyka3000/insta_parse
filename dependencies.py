@@ -11,12 +11,15 @@ from selenium.webdriver.support.wait import WebDriverWait
 
 
 class Settings(BaseSettings):
-    password: constr(min_length=6, max_length=100, strip_whitespace=True) = Field(alias='INST_PASS')
+    password: constr(
+        min_length=6,
+        max_length=100,
+        strip_whitespace=True) = Field(alias='INST_PASS', default='password')
     username: constr(
         min_length=1,
         max_length=100,
         strip_whitespace=True
-    ) = Field(alias='INST_LOGIN')
+    ) = Field(alias='INST_LOGIN', default='username')
     base_url: str = Field(default='https://www.instagram.com/', alias='INST_URL')
 
     model_config = ConfigDict(extra="allow")
